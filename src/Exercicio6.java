@@ -1,19 +1,25 @@
 import java.util.Scanner;
-
-// Exibição dos primeiros 10 números da sequência de Fibonacci
 public class Exercicio6 {
     public static void main(String[] args) {
-        int a = 0, b = 1, contador = 0;
+        Scanner scanner = new Scanner(System.in);
+        int[][] matriz = new int[2][2];
 
-        while (contador < 10) {
-            System.out.print(a + " ");
-            int proximo = a + b;
-            a = b;
-            b = proximo;
-            contador++;
+        // Preenchendo a matriz 2x2 com números fornecidos pelo usuário
+        for (int i = 0; i < 2; i++) {
+            for (int j = 0; j < 2; j++) {
+                System.out.print("Digite o valor para a posição [" + i + "][" + j + "]: ");
+                matriz[i][j] = scanner.nextInt();
+            }
+        }
+
+        // Exibindo os valores inseridos
+        System.out.println("Matriz 2x2 preenchida:");
+        for (int i = 0; i < 2; i++) {
+            for (int j = 0; j < 2; j++) {
+                System.out.print(matriz[i][j] + " ");
+            }
+            System.out.println();
         }
     }
 }
-// Validação de entrada de uma nota entre 0 e 10
-import java.util.Scanner;
 

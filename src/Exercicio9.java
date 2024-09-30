@@ -1,28 +1,24 @@
-import java.util.Random;
 import java.util.Scanner;
-//jogo de adivinhação
-
 public class Exercicio9 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        Random random = new Random();
-        int numeroAleatorio = random.nextInt(100) + 1;
-        int tentativas = 0;
-        int palpite;
+        int[][] matriz = new int[4][4];
+        int contagemPares = 0;
 
-        do {
-            System.out.print("Adivinhe o número (entre 1 e 100): ");
-            palpite = scanner.nextInt();
-            tentativas++;
+        // Preenchendo a matriz 4x4 com números fornecidos pelo usuário
+        for (int i = 0; i < 4; i++) {
+            for (int j = 0; j < 4; j++) {
+                System.out.print("Digite o valor para a posição [" + i + "][" + j + "]: ");
+                matriz[i][j] = scanner.nextInt();
 
-            if (palpite < numeroAleatorio) {
-                System.out.println("Tente um número maior.");
-            } else if (palpite > numeroAleatorio) {
-                System.out.println("Tente um número menor.");
+                // Verificando se o número é par
+                if (matriz[i][j] % 2 == 0) {
+                    contagemPares++;
+                }
             }
-        } while (palpite != numeroAleatorio);
+        }
 
-        System.out.println("Parabéns! Você acertou o número " + numeroAleatorio + " em " + tentativas + " tentativas.");
-        scanner.close();
+        // Exibindo a quantidade de números pares na matriz
+        System.out.println("A quantidade de números pares na matriz é: " + contagemPares);
     }
 }

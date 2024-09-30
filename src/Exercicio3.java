@@ -1,18 +1,24 @@
 import java.util.Scanner;
-
 public class Exercicio3 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Digite um número inteiro positivo: ");
-        int num = scanner.nextInt();
-        int fatorial = 1;
+        boolean[] valores = new boolean[8];
+        int contagemTrue = 0;
 
-        do {
-            fatorial *= num;
-            num--;
-        } while (num > 1);
+        // Armazenando 8 valores booleanos
+        for (int i = 0; i < 8; i++) {
+            System.out.print("Digite true ou false para a posição " + (i + 1) + ": ");
+            valores[i] = scanner.nextBoolean();
 
-        System.out.println("O fatorial é: " + fatorial);
-        scanner.close();
+            // Contando quantos valores true foram inseridos
+            if (valores[i]) {
+                contagemTrue++;
+            }
+        }
+
+        // Exibindo o resultado
+        System.out.println("O número de valores true inseridos foi: " + contagemTrue);
     }
 }
+
+

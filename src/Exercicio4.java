@@ -1,28 +1,23 @@
 import java.util.Scanner;
-
 public class Exercicio4 {
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Digite um número inteiro positivo: ");
-        int num = scanner.nextInt();
-        boolean ehPrimo = true;
 
-        if (num < 2) {
-            ehPrimo = false;
-        } else {
-            for (int i = 2; i <= Math.sqrt(num); i++) {
-                if (num % i == 0) {
-                    ehPrimo = false;
-                    break;
-                }
+        public static void main(String[] args) {
+            Scanner scanner = new Scanner(System.in);
+            double[] notas = new double[4];
+            double soma = 0.0;
+
+            // Armazenando 4 notas
+            for (int i = 0; i < 4; i++) {
+                System.out.print("Digite a " + (i + 1) + "ª nota: ");
+                notas[i] = scanner.nextDouble();
+                soma += notas[i]; // Somando as notas
             }
-        }
 
-        if (ehPrimo) {
-            System.out.println(num + " é um número primo.");
-        } else {
-            System.out.println(num + " não é um número primo.");
+            // Calculando e exibindo a média
+            double media = soma / 4;
+            System.out.printf("A média das notas é: %.2f\n", media);
         }
-        scanner.close();
     }
-}
+
+
+

@@ -1,21 +1,33 @@
 import java.util.Scanner;
-
-// Soma de números pares de 1 a 100
 public class Exercicio2 {
     public static void main(String[] args) {
-        int soma = 0;
-        int num = 2;
+        Scanner scanner = new Scanner(System.in);
+        char[] caracteres = new char[6];
 
-        while (num <= 100) {
-            soma += num;
-            num += 2;
+        // Armazenando 6 caracteres
+        for (int i = 0; i < 6; i++) {
+            System.out.print("Digite o " + (i + 1) + "º caractere: ");
+            caracteres[i] = scanner.next().charAt(0);
         }
 
-        System.out.println("A soma dos números pares de 1 a 100 é: " + soma);
-    }
-    }
+        // Perguntando ao usuário uma letra
+        System.out.print("Digite uma letra para verificar se está no vetor: ");
+        char letra = scanner.next().charAt(0);
 
-// Cálculo de fatorial utilizando do-while
-import java.util.Scanner;
+        // Verificando se a letra está presente no vetor
+        boolean encontrada = false;
+        for (char c : caracteres) {
+            if (c == letra) {
+                encontrada = true;
+                break;
+            }
+        }
 
+        if (encontrada) {
+            System.out.println("A letra '" + letra + "' está presente no vetor.");
+        } else {
+            System.out.println("A letra '" + letra + "' não está presente no vetor.");
+        }
+    }
+}
 
